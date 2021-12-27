@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main(){
+
+    char str[100];
+    char x;
+    int i=0;
+    int count =0;
+
+    printf("Please provide the string: ");
+    gets(str);
+    fflush(stdin);
+    printf("\nProvide the character: ");
+    scanf("%c",&x);
+
+    // Convert the given value into Upper case
+    if(x>='a' && x <='z'){
+        x = x - 32;
+    }
+
+
+    while(str[i]!='\0'){
+
+        if(str[i]==x || str[i]==x+32){
+            count++;
+        }
+
+        i++;
+    }
+
+    printf("\nCount= %d", count);
+
+    return 0;
+}
