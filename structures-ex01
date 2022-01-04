@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+// create struct
+struct Student {
+  char name[50];
+  int id;
+  float cgpa;
+};
+typedef struct Student Student;
+
+int main() {
+
+    // create variable of Student struct
+    Student std;
+
+  // assign value to name of std
+  strcpy(std.name, "Peter Parker");
+
+  // assign values to other std variables
+  std.id = 221;
+  std. cgpa = 3.50;
+
+  // print struct variables
+  printf("Name: %s\n", std.name);
+  printf("Id No.: %d\n", std.id);
+  printf("CGPA: %.2f", std.cgpa);
+
+  return 0;
+}
