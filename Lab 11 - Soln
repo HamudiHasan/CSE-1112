@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct triangle {
+
+    int triangle_id;
+    int base;
+    int height;
+
+} triangle;
+
+float findArea(int base, int height){
+    return (float)(base*height)/2;
+}
+
+int findMax(triangle data[],int size){
+    int max= 0;
+    int index =0;
+
+    for(int i=0; i<size;i++){
+
+    float area = findArea(data[i].base,data[i].height);
+        if(max<area){
+            max= area;
+            index = i;
+        }
+
+    }
+
+    return index;
+}
+
+int main()
+{
+    int n =3;
+    triangle tri [100];
+
+    for (int i=0; i<n; i++){
+        scanf("%d",&tri[i].triangle_id);
+        scanf("%d",&tri[i].base);
+        scanf("%d", &tri[i].height);
+    }
+
+    puts("i b h A");
+
+    for(int i=0; i<n; i++){
+        printf("%d ",tri[i].triangle_id);
+        printf("%d ",tri[i].base);
+        printf("%d ", tri[i].height);
+        printf("%.2f\n", findArea(tri[i].base,tri[i].height));
+    }
+
+    int index = findMax(tri,n);
+
+    printf("Area of %d = %.2f",tri[index].triangle_id,findArea(tri[index].base,tri[index].height) );
+
+
+    return 0;
+}
