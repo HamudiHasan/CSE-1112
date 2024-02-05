@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+// Function prototype
+int square(int num);
+
+int main() {
+    int userInput;
+
+    // Prompt the user to enter an integer
+    printf("Enter an integer: ");
+    scanf("%d", &userInput);
+
+    // Function call to square the entered integer
+    int result = square(userInput);
+
+    // Display the result
+    printf("Square of %d is: %d\n", userInput, result);
+
+    return 0;
+}
+
+// Function definition for calculating the square
+int square(int num) {
+    return num * num;
+}
